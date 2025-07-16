@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Vault</title>
+  <link rel="stylesheet" href="vault.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Password Vault</h1>
+
+    <div id="accountInit">
+      <button onclick="createAccount()">Create Account</button>
+      <button onclick="showLogin()">Login</button>
+    </div>
+
+    <div id="registerSection" style="display:none;">
+      <h3>Register</h3>
+      <input id="regUsername" placeholder="Choose username" />
+      <input id="regPassword" type="password" placeholder="Choose password" />
+      <button onclick="registerUser()">Create Vault</button>
+      <button onclick="goBack()">← Back</button>
+    </div>
+
+    <div id="loginSection" style="display:none;">
+      <h3>Login</h3>
+      <input id="loginUsername" placeholder="Username" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p><a href="#" onclick="showHelp()">Help</a></p>
+      <button onclick="goBack()">← Back</button>
+    </div>
+
+    <div id="helpSection" style="display:none;">
+      <h4>Reset Password</h4>
+      <input id="resetMasterKey" placeholder="Enter your master key" />
+      <input id="resetNewPassword" type="password" placeholder="New password" />
+      <button onclick="resetPassword()">Reset</button>
+
+      <h4>Find Username</h4>
+      <input id="lookupMasterKey" placeholder="Enter your master key" />
+      <button onclick="getUsername()">Get Username</button>
+      <button onclick="showLogin()">← Back</button>
+    </div>
+
+    <div id="vault" style="display:none;">
+      <h3>My Vault</h3>
+      <div id="entries">
+        <div class="entry">
+          <div class="entry-details">
+            <span class="entry-name">Entry Name</span>
+            <span class="entry-user">Username</span>
+            <span class="entry-pass password-hidden" id="pass-...">Password</span>
+          </div>
+          <span class="reveal" onclick="togglePassword('...')">👁</span>
+          <button class="delete" onclick="deleteEntry('...')">Delete</button>
+        </div>
+      </div>
+      <input id="entryName" placeholder="Entry Name" />
+      <input id="entryUser" placeholder="Username/Email" />
+      <input id="entryPass" placeholder="Password" />
+      <button onclick="saveEntry()">Save Entry</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script src="vault.js"></script>
+</body>
+</html>
