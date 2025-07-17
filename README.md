@@ -52,4 +52,4 @@ A: Use your master key shown at registration.
 A: Block HTTP ports in your Synology firewall and enable HTTPS in DSM.
 
 ## License
-# password-vault
+MIT License
